@@ -1,0 +1,33 @@
+@keyframes fadeToNearBlack {
+	to { background: rgba(0,0,0,0.9); }
+}
+@keyframes goBig { 
+	to { opacity: 1; } 
+}
+
+nav a { 
+	display: block; flex: 1; color:ae14ad; 
+} 
+nav a img, 
+dialog img { 
+	width: 100%; height: auto; color:ae14ad;
+}
+dialog { border: none; opacity: 0; color:ae14ad;}
+dialog button { 
+	border: none; background: none; font-size: 1.2rem; color:ae14ad; 
+}
+dialog[open] {
+	animation: goBig 1s .4s forwards;
+	width: 70%; margin: auto;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	max-width: 700px; 
+}
+dialog[open]::backdrop { 
+	animation: fadeToNearBlack 1s forwards; 
+}
+.backdrop { 
+	animation: fadeToNearBlack 1s forwards; 
+}

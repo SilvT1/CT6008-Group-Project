@@ -1,0 +1,274 @@
+/*FELICIA*/
+/* Form Styles */
+/*@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);*/
+
+/*colours:
+purple: ae14ad;//interaction
+teal: 009999;//accent
+drk grey:333333;
+pale grey:b1b1b1;
+white:fdfdfd;
+*/
+
+/**FORM STYLES**/
+
+form,
+fieldset{
+	border:none;
+	font-size:1.5vw;
+	clear:right;
+	text-align:left;
+	overflow:auto;
+}
+
+label{
+	display:block;
+	width:100%;
+	margin-top:1em;
+}
+
+input,
+select,
+textarea {
+	min-height:40px;
+	height:auto;
+    width: 100%;
+    border:1px solid #ae14ad;
+	padding:5px 20px;
+	margin-top:0.5vw;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+	background: #fdfdfd url("../www-images/downArrow.png") no-repeat;   /* add custom arrow */
+    background-position:  right 10px center;
+}
+
+textarea {
+	font-family: 'Myriad Pro', Frutiger, Segoe, sans-serif;
+	resize: none;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    height:150px;
+    -webkit-transition: height 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out;
+}
+
+/*textarea:focus{
+	height:200px;
+}*/
+
+form p{
+	clear:both;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"]{
+	width:30%;
+	height:auto;
+	background-color:#ae14ad;
+	border:none;
+	color:#fdfdfd;
+	float:right;
+	text-transform:uppercase;
+	margin-left:2%;
+	margin-top:1em;
+	padding:1vw;
+    cursor: pointer;
+}
+
+form#loginForm input[type="submit"],
+form#forgotPassword input[type="submit"]{
+	margin-top:2em;
+	margin-left:0;
+	width:100%;
+	float:none;
+	clear:both;
+}
+
+input.error {
+	background-color:rgb(174,20,173);
+	background-color:rgba(174,20,173,0.2);
+}
+
+/** Product details form
+	additional CSS **/
+
+form#product-details {
+	width:75%;
+	margin:auto;
+	margin-top:2em;
+}
+
+form#product-details input[type="file"]{
+	background-color:white;
+}
+
+input[type="file"]{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	/*background-color:#ae14ad;
+	color:white;*/
+}
+
+form#product-details input[type="submit"],
+form#product-details input[type="button"] {
+	width:30%;
+	margin:0 2.5%;
+	margin-top:2em;
+}
+
+form#product-details input[type="button"]:first-of-type {
+	margin-right:0;
+}
+
+form#product-details input[type="button"]:last-of-type {
+	margin-left:0;
+}
+
+/*starts with dynamic-*/
+fieldset[id^="dynamic-"]{
+	overflow:inherit;
+}
+
+
+fieldset[id^="dynamic-"] h3, 
+fieldset[id^="dynamic-"] p {
+	margin:1em 0;
+}
+
+fieldset[id^="dynamic-"] hr {
+	margin-top:2em;
+}
+
+fieldset[id^="dynamic-"] div {
+	border:1px solid #ae14ad;
+	padding:1em;
+	width:100%;
+	height:auto;
+	overflow:auto;
+	background-color: #FFF;
+	margin:1em 0;
+}
+
+fieldset[id^="dynamic-"] div[id$="slideLayout"] {
+	border:none;
+	background-color: unset;	
+}
+
+/*fieldset[id^="dynamic-"] div[id$="slideLayout"] input,
+fieldset[id^="dynamic-"] div[id$="slideLayout"] label,
+fieldset[id^="dynamic-"] div[id$="slideLayout"] select {
+	width:45%;	
+	float:left;
+}
+
+fieldset[id^="dynamic-"] div[id$="slideLayout"] input {
+	margin-left:10%;	
+	clear:right;
+}*/
+
+fieldset[id^="dynamic-"] img {
+	width:15%;
+	margin-right:2%;
+    cursor: pointer;
+    transition:.3s;
+}
+
+fieldset[id^="dynamic-"] img:last-of-type {
+	margin-right:0;
+}
+
+fieldset[id^="dynamic-"] img:hover {
+	opacity:0.75;
+}
+
+fieldset[id^="dynamic-"] img.disabled {
+	opacity:0.5;
+}
+
+fieldset[id^="dynamic-"] img.selected,
+fieldset[id^="dynamic-"] img.selected:hover {
+	opacity:1;
+}
+
+
+/**designer bio form**/
+form#designerBio {
+	width:100%;
+	margin: 1em auto;
+	overflow:auto;
+}
+form#designerBio fieldset {
+	width:48%;
+	float:left;
+}
+form#designerBio fieldset:nth-of-type(2) {
+	margin-left:4%;
+}
+
+form#designerBio textarea {
+	height:280px;
+}
+form#designerBio fieldset#buttons {
+	width:100%;
+}
+
+
+
+
+/**QR scanner CSS - only visible on mobile devices**/
+div.mobileOnly {
+	display:none;
+}
+p.nonMobile {
+	display:inherit;
+}
+
+@media only screen and (max-device-width:750px) {
+	div.mobileOnly {
+		display:inherit;	
+	}
+	p.nonMobile {
+		display:none;	
+	}
+	input.qrcode, label.qrcode {vertical-align:middle}
+
+	.qrcode-text-btn {
+		display:inline-block; 
+		background:url("../www-images/QR_Scan.svg") 50% 50% no-repeat; 
+		height:50vw; 
+		width:50vw; 
+		margin:2em;
+		cursor:pointer
+	}
+
+	.qrcode-text {
+		
+	}
+
+	/*hide the input field; "display:none" won't work in all browsers so make it supah tiny*/
+	.qrcode-text-btn > input[type=file] {
+		position:absolute; 
+		overflow:hidden; 
+		width:1px; 
+		height:1px; 
+		opacity:0
+	}
+}
+
+
+
+/**
+Responsive CSS
+**/
+@media only screen and (max-device-width:800px) {
+	form,
+	fieldset,
+	input {
+		font-size:4vw;
+		line-height:5vw;
+	}
+}
